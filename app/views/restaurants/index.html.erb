@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="content">
+    <div class="cards">
+      <% @restaurants.each do |restaurant|  %>
+          <%= link_to restaurant_path(restaurant), class: "card", style:"background-image: url(https://source.unsplash.com/featured/?#{restaurant.name.split(" ").join("%20")})" do %>
+            <h3 class="restaurant-name"><%= restaurant.name %></h3>
+            <p class="restaurant-category"><%= restaurant.category.capitalize %></p>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "Create a new restaurant", new_restaurant_path %>
+
+</div>

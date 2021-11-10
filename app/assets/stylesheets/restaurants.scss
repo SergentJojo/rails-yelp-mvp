@@ -1,0 +1,45 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+
+.content {
+  display: flex;
+}
+.cards {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  padding: 16px;
+}
+
+
+.card {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.card:hover {
+  color: rgba(255,255,255,1);
+}
+
+.restaurant-name {
+  font-size: 32px;
+}
+
+.restaurant-category {
+  font-size: 24px;
+}
+
+a,
+a:hover {
+  text-decoration: none;
+}
