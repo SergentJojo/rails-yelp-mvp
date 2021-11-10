@@ -13,6 +13,22 @@
   padding: 16px;
 }
 
+.container {
+  padding-top: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px;
+}
+
+abbr {
+  color: red;
+}
+
+label {
+  font-size: 24px;
+}
 
 .card {
   background-size: cover;
@@ -42,4 +58,41 @@
 a,
 a:hover {
   text-decoration: none;
+}
+
+.restaurant-information {
+  margin: 20px 0;
+  padding: 20px 0;
+  text-align: center;
+  border: solid 1px;
+  border-color: black;
+  border-radius: 5px;
+  color: orange;
+  background-color: white;
+}
+
+.restaurant-card {
+  display: flex;
+  align-items: center;
+}
+
+////// Reviews
+
+.cards-review {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 16px;
+}
+
+.card-review {
+  background-size: cover;
+  background-position: center;
+  height: 150px;
+  border-radius: 1px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
 }

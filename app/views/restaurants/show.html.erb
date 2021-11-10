@@ -1,13 +1,29 @@
-<h1><%= @restaurant.name %></h1>
-<h2> Category: <%= @restaurant.category.capitalize %></h2>
-<h2> Address: <%= @restaurant.address %></h2>
-<h2> Phone number: <%= @restaurant.phone_number %></h2>
 
-<ul class="list-group">
-  <% @restaurant.reviews.each do |review| %>
-    <li class="list-group-item"><%= review.rating %>/5 - <%= review.content %></li>
+<div class="container">
+  <div class="restaurant-card">
+    <div class= "card" style="background-image: url(https://source.unsplash.com/featured/?<%= @restaurant.name.split(" ").join("%20") %>">
+      <h1><%= @restaurant.name %></h1>
+    </div>
+
+    <div class="restaurant-information">
+      <p> Category: <%= @restaurant.category.capitalize %></p>
+      <p> Address: <%= @restaurant.address %></p>
+      <p> Phone number: <%= @restaurant.phone_number %></p>
+    </div>
+  </div>
+  <div class="content">
+    <div class="cards-review">
+      <% @restaurant.reviews.each do |review| %>
+        <div class="card-review"><%= review.rating %>/5 - <%= review.content %></div>
+      <% end %>
+    </div>
+  </div>
+
+  <%= link_to "Return to list", restaurants_path %>
+
+  <%= simple_form_for([@restaurant, @review]) do |f| %>
+    <%= f.input :rating, as: :radio_buttons, :collection => (0..5) %>
+    <%= f.input :content %>
+    <%= f.submit class: "btn btn-primary" %>
   <% end %>
-</ul>
-
-<%= link_to "Return to list", restaurants_path %>
-<%= link_to 'Leave a review', new_restaurant_review_path(@restaurant) %>
+</div>
